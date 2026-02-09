@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="HandheldFriendly" content="true" />
+  <meta name="viewport" content="width=device-width, height=device-height, user-scalable=yes, initial-scale=1" />
+  <title>Conference on Rings and Factorizations</title>
+
+  <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body>
+  <div id="content-container">
+  <div id="content">
+    <div id="header">
+      <div id="title">Conference on Rings and Factorizations</div>
+      <div id="date">February 19th to 23rd, 2018 in Graz</div>
+    </div>
+
+    <div id="nav">
+      
+      <a href="https://imsc.uni-graz.at/rings2018/index.html"><div class="inactive">Overview</div></a>
+      
+      <a href="news.html"><div class="inactive">News</div></a>
+      
+      <a href="photos.html"><div class="inactive">Photos</div></a>
+      
+      <a href="program.html"><div class="inactive">Scientific Program</div></a>
+      
+      <a href="participants.html"><div class="inactive">Participants</div></a>
+      
+      <a href="proceedings.html"><div class="inactive">Proceedings</div></a>
+      
+      <a href="location.html"><div class="active">Location</div></a>
+      
+      <a href="social.html"><div class="inactive">Social Activities</div></a>
+      
+      <a href="deadlines.html"><div class="inactive">Deadlines</div></a>
+      
+      <a href="abstracts.html"><div class="inactive">Abstracts</div></a>
+      
+      <a href="registration.html"><div class="inactive">Registration</div></a>
+      
+      <a href="accommodation.html"><div class="inactive">Accommodation</div></a>
+      
+      <a href="travel.html"><div class="inactive">Travel</div></a>
+      
+      <a href="links.html"><div class="inactive">Useful links</div></a>
+      
+      <a href="contact.html"><div class="inactive">Contact</div></a>
+      
+      <div class="clearer"></div>
+    </div>
+
+    <div id="main">
+      <p>The conference will take place at the <strong><a href="https://mathematik.uni-graz.at">Institute of Mathematics and Scientific Computing</a></strong> of the University of Graz.
+The address of the building is <strong>Heinrichstra&szlig;e 36</strong> (building 11 of the university campus).
+</p>
+
+<p>All talks will take place in the big lecture halls on the ground floor.
+The rooms are equipped with projectors and big chalkboards.
+</p>
+
+<div id="map" style="height:30em;"></div>
+
+<div class="legend">
+  <div class="legendicon"><img src="images/marker-red.png" alt="Red Marker"/></div>
+  <div class="legendtext">
+    <a href="http://math.uni-graz.at">Institute of Mathematics and Scientific Computing</a><br/>
+    Heinrichstra&szlig;e 36<br/>
+    8010 Graz
+  </div>
+</div>
+
+<div class="legend">
+  <div class="legendicon"><img src="images/marker-gold.png" alt="Gold Marker"/></div>
+  <div class="legendtext">
+    <a href="http://www.hotel-stoiser.at/hotel-graz+M52087573ab0.html">Hotel Stoiser</a><br/>
+    Mariatrosterstra&szlig;e 174<br/>
+    8044 Graz
+  </div>
+</div>
+
+<script src="https://openlayers.org/api/OpenLayers.js"></script>
+<script>
+  function init() {
+    map = new OpenLayers.Map("map");
+    var mapOSM         = new OpenLayers.Layer.OSM();
+
+    var fromProjection = new OpenLayers.Projection("EPSG:4326");   // Transform from WGS 1984
+    var toProjection   = new OpenLayers.Projection("EPSG:900913"); // to Spherical Mercator Projection
+    var zoom           = 12;
+
+    var mathLoc        = new OpenLayers.LonLat(15.4486,47.0790).transform(fromProjection, toProjection);
+
+    map.addLayer(mapOSM);
+    map.setCenter(mathLoc, zoom);
+
+    // create a styleMap with a custom default symbolizer
+    var styleMap = new OpenLayers.StyleMap({
+      fillOpacity: 1,
+      pointRadius: 10
+    });
+
+    var mathInst = new OpenLayers.Feature.Vector(
+        new OpenLayers.Geometry.Point(15.4486,47.0790).transform(fromProjection, toProjection),
+        {type: 'math'});
+
+    var hotels = new Array();
+    hotels[0] = new OpenLayers.Feature.Vector(
+        new OpenLayers.Geometry.Point(15.483239,47.102383).transform(fromProjection, toProjection),
+        {type: 'h-stoisser'});
+
+    // create a lookup table with different symbolizers for 0, 1 and 2
+    var lookup = {
+      'math':  {externalGraphic: "images/marker-red.png"},
+      'h-stoisser': {externalGraphic: "images/marker-gold.png"},
+    };
+
+    // add rules from the above lookup table, with the keys mapped to
+    // the "type" property of the features, for the "default" intent
+    styleMap.addUniqueValueRules("default", "type", lookup);
+
+    layer = new OpenLayers.Layer.Vector("Points of Interest", {
+      styleMap: styleMap
+    });
+
+    layer.addFeatures([mathInst]);
+    layer.addFeatures(hotels);
+    map.addLayer(layer);
+  }
+  init();
+</script>
+
+
+    </div>
+
+    <div id="footer">
+      <div id="contact">Contact: <a href="mailto:rings2018@uni-graz.at">rings2018@uni-graz.at</a></div>
+      <div id="change">Last changed: 2017-09-18</div>
+      <div class="clearer"></div>
+    </div>
+  </div>
+  </div>
+</body>
+</html>

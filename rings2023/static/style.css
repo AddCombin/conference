@@ -1,0 +1,487 @@
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+
+@font-face {
+ font-family:Nunito Sans;
+ font-style:normal;
+ font-weight:400;
+ src:local(""),
+ url(https://www.uni-graz.at/dist/unigraz/assets/50c99b9fdf868f0242e0092657e54378.woff2) format("woff2"),
+ url(https://www.uni-graz.at/dist/unigraz/assets/c9a45b337c19a3fa25a031fb33c91b53.woff) format("woff")
+}
+@font-face {
+ font-family:Nunito Sans;
+ font-style:normal;
+ font-weight:700;
+ src:local(""),
+ url(https://www.uni-graz.at/dist/unigraz/assets/e53d2baf43de947efce68804c7d3dc60.woff2) format("woff2"),
+ url(https://www.uni-graz.at/dist/unigraz/assets/ee2991c493d25b9312c0b961fc976458.woff) format("woff")
+}
+@font-face {
+ font-family:Nunito Sans;
+ font-style:normal;
+ font-weight:800;
+ src:local(""),
+ url(https://www.uni-graz.at/dist/unigraz/assets/d468879be9164428c436529b4bad1c17.woff2) format("woff2"),
+ url(https://www.uni-graz.at/dist/unigraz/assets/3d5537582cc96dfbe5fb079b6badf34d.woff) format("woff")
+}
+
+@font-face {
+ font-family:District Pro W03 Thin;
+ font-style:normal;
+ font-weight:400;
+ src:local("District Pro"),
+ local("DistrictPro"),
+ url(https://www.uni-graz.at/dist/unigraz/assets/83a9a1036a789c4155beef8ccf37fd94.woff2) format("woff2"),
+ url(https://www.uni-graz.at/dist/unigraz/assets/30a3d6fd98f76014f8aff1347a0e301a.woff) format("woff")
+}
+
+html {
+  /* ensure that the vertical scroll-bar is always present;
+   * otherwise there are jumps of the layout when switching from a
+   * very short page to a longer one */
+  overflow-y: scroll;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #000;
+  background: #fff;
+  text-align: left;
+}
+
+a {
+  background-image: linear-gradient(0deg,#fddc05,#fddc05);
+  background-repeat: no-repeat;
+  background-size: 0 3px;
+  background-position: right 0 bottom 0;
+  transition: background-size .4s ease,color .4s ease,fill .4s ease;
+  background-size: 100% 3px;
+  background-position: left 0 bottom 0;
+  background-color: transparent;
+  color: #000;
+  text-decoration: none;
+}
+
+a:hover {
+  background-image: none;
+}
+
+div#content-container {
+  max-width: 64em;
+  margin: 0 auto;
+  padding: 0;
+}
+
+div#content {
+  width: 100%;
+  padding-right: 1.5em;
+  padding-left: 1.5em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media all and (max-width: 750px) {
+  div#content {
+    padding-right: 0.5em;
+    padding-left: 0.5em;
+  }
+}
+
+
+/* HEADER */
+div#header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 38px;
+  padding-bottom: 38px;
+}
+
+@media (max-width:787.98px) {
+  div#header {
+    padding-top: 19px;
+    padding-bottom: 19px;
+  }
+}
+
+@media (max-width:575.98px) {
+  div#header {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+}
+
+#header .unigraz-logo {
+  display: flex;
+  justify-content: flex-end;
+  max-width: 60%;
+}
+
+.unigraz-logo .text  {
+  text-align: right;
+  font-family: District Pro W03 Thin;
+}
+
+.unigraz-logo .text .uc {
+  display: block;
+  text-transform: uppercase;
+  font-size: 23px;
+  line-height: 29px;
+}
+
+.unigraz-logo .text .logoclaim {
+  display: block;
+  margin-top: 6px;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.unigraz-logo img {
+  float: right;
+  width: 100px;
+  height: 85px;
+  margin-left: 12px;
+}
+
+@media (max-width:787.98px) {
+  #header .unigraz-logo .text .uc {
+    font-size:12px;
+    line-height:14.67px
+  }
+  #header .unigraz-logo .text .logoclaim {
+    margin-top:3px;
+    font-size:11.12px
+  }
+}
+
+@media (max-width:575.98px) {
+  #header .unigraz-logo .text .logoclaim {
+    display:none
+  }
+}
+
+@media (max-width:787.98px) {
+ #header .unigraz-logo img {
+  width:51px;
+  height:43px;
+  margin-left:6px
+ }
+}
+
+#header .group span {
+  display: block;
+  font-family: District Pro W03 Thin;
+}
+
+#header .group .title {
+  font-size: 23px;
+  line-height: 29px;
+}
+
+#header .group .sub {
+  font-size: 20px;
+  line-height: 1;
+  margin-top: 6px;
+}
+
+@media (max-width:787.98px) {
+  #header .group .title {
+    font-size:12px;
+    line-height:14.67px
+  }
+  #header .group .sub {
+    margin-top:3px;
+    font-size:11.12px
+  }
+}
+
+@media (max-width:575.98px) {
+  #header .group .sub {
+    display:none
+  }
+}
+
+
+#header a,
+#header a:hover {
+  color: #000000;
+  text-decoration: none;
+  background-image: none;
+}
+
+/* NAVIGATION */
+#nav {
+  display: flex;
+  position: relative;
+  font-family: Nunito Sans;
+
+  margin-bottom: 0;
+  padding-bottom: 5px;
+  border-bottom: 2px solid #d9d9d9;
+}
+
+#nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#nav a {
+  display: block;
+  color: #000000;
+  text-decoration: none;
+  background-image: none;
+  height: 100%;
+  text-align: center;
+
+  padding: .5em .9375em;
+  font-weight: 700;
+  text-transform: uppercase;
+
+  background-image: linear-gradient(0deg,#fddc05,#fddc05);
+  background-repeat: no-repeat;
+  background-size: 0 100%;
+  background-position: right 0 bottom 0;
+  transition: background-size 0.4s ease,color 0.4s ease,fill 0.4s ease;
+}
+
+#nav a:hover {
+  background-color: #fddc05;
+}
+
+#nav li {
+  margin-right: 0.2em;
+}
+
+#nav .active {
+  background-color: #fddc05;
+}
+
+@media all and (max-width: 350px) {
+  #nav li {
+    width: 100%;
+  }
+}
+
+/* CONTACT DATA */
+div.contact {
+  margin-top: 1.5em;
+}
+
+div.contact .name {
+  font-weight: bold;
+  font-size: 120%;
+}
+
+div.contact .function {
+  font-size: 120%;
+}
+
+dl.contact {
+  margin-top: 0.2em;
+}
+
+dl.address dt {
+  font-weight: bold;
+}
+
+dl.contact dt {
+  font-weight: bold;
+  float: left;
+  margin-right: 1em;
+}
+
+/* GENERAL */
+table {
+  margin-top: 1.5em;
+  border: none;
+  border-collapse: collapse;
+}
+
+table td {
+  vertical-align: top;
+  padding: 0.2em;
+}
+
+@media all and (max-width: 750px) {
+  table {
+    border-spacing: 0 1em;
+    border-collapse: separate;
+  }
+
+  table td {
+    padding: 0.1em;
+  }
+}
+
+ul.conflist li {
+  padding: 0.2em;
+}
+
+@media all and (max-width: 750px) {
+  ul.conflist li {
+    padding: 0.2em 0em;
+  }
+
+  ul.conflist {
+    padding-left: 1em;
+  }
+}
+
+.h1, h1 {
+  font-size: 1.5em;
+}
+
+.h2, h2 {
+  font-size: 1.1em;
+}
+
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+  margin-top: 1.5em;
+  margin-bottom: 0.75em;
+  font-family: Nunito Sans;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+
+#logos {
+  text-align: center;
+  padding-top: 4em;
+  padding-bottom: 4em;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#logos img {
+  height: 50px;
+  margin: 10px;
+}
+
+#logos a {
+  background-image: none;
+}
+
+div#footer {
+  padding-top: 2em;
+  font-size: 13px;
+  text-align: center;
+  color: #aaa;
+  padding-bottom: 4em;
+}
+
+div#footer a {
+  background: none;
+  color: #aaa;
+}
+
+.img-banner {
+  margin-top: 0.25em;
+  martin-bottom: 0.25em;
+  width: 100%;
+}
+
+.plenary {
+  font-weight: bold;
+}
+
+.highlight {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0.25em 1em;
+  border: 1px solid #fddc05;
+  background: #f0f0f0;
+}
+
+
+/* FORMS */
+
+form {
+  display: inline-block;
+  text-align: left;
+  width: 100%;
+  max-width: 30em;
+}
+
+/*.form-container {
+  text-align: center;
+  width: 100%;
+}*/
+
+label {
+ display: block;
+ margin-bottom:.1rem;
+ margin-top: 0.75rem;
+ vertical-align: middle;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+ font-family:inherit;
+ font-size:inherit;
+ line-height:inherit;
+ border-radius: 5px;
+ border: 1px solid gray;
+ width: 100%;
+}
+
+
+button,
+input {
+  height: 2.25em; 
+}
+
+
+input[type=checkbox] {
+  width: auto;
+  vertical-align: middle;
+  margin-right: 0.5em;
+}
+
+textarea {
+ overflow:auto;
+ resize:vertical
+}
+
+
+.form-sec {
+  font-weight: bold;
+  padding-top: 2em;
+}
+
+.spacer {
+  height: 1em;
+}
+
+/* Participant table (internal) */
+
+.comment-row-header {
+  font-weight: bold;
+  padding-bottom: 1.2em;
+}
+
+.table-participants tr {
+  border-top: 1px solid black;
+}
+
+.table-participants tr.comment-row {
+  border-top: none;
+}

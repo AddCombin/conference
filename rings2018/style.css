@@ -1,0 +1,472 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  /* ensure that the vertical scroll-bar is always present;
+   * this aways jumps when switching from a very short page
+   * to a longer one */
+  overflow-y: scroll;
+}
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  line-height: 135%;
+  color: #333;
+  background: #888;
+}
+
+div#header {
+  font-family: "Century Gothic", Helvetica, Arial, sans-serif;
+  text-align: center;
+  margin-bottom: 0.5em;
+  color: #fff;
+  background: #9962a7;
+  padding: 1em;
+}
+
+div#nav {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 80%;
+  float: left;
+  width: 13em;
+  overflow: hidden;
+  padding-top: 1em;
+  margin-bottom: 3em;
+}
+
+div#nav div.active,div#nav div.inactive {
+  color: #000;
+  padding: 0.2em 0.3em 0.1em 0.3em;
+  display: block;
+  float: left;
+  margin-right: 0.25em;
+  margin-top: 0.25em;
+  margin-left: 0;
+  width: 10em;
+  text-align: center;
+}
+
+div#main {
+  overflow:hidden;
+}
+
+p {
+  margin: 1em 0;
+}
+
+div#nav div.inactive:hover,
+div#nav div.inactive:active
+{
+  background: #9962a7;
+  text-decoration: none;
+  color: #fff;
+}
+
+div#nav div.active {
+  background: #9962a7;
+  border: 1px solid #9962a7;
+  color: #fff;
+}
+
+div#nav div.inactive {
+  background: #fff;
+  border: 1px solid #9962a7;
+  color: #230339;
+}
+
+div#header div#title {
+  font-size: 180%;
+  font-weight: bold;
+  margin-bottom: 0.25em;
+  line-height: 120%;
+}
+
+div#header div#subtitle {
+  font-size: 100%;
+  margin-bottom: 0.25em;
+  line-height: 120%;
+}
+
+div#header div#date {
+  font-size: 100%;
+  line-height: 120%;
+}
+
+span.date, span.location {
+  font-weight:bold;
+}
+
+@media all and (max-width: 650px) {
+  /* Change to a compact navigation layout for small widths */
+  div#nav {
+    width: auto;
+    float: none;
+    margin-bottom: 0.5em;
+    padding-top: 0em;
+  }
+
+  div#nav div.active,
+  div#nav div.inactive {
+    width: auto;
+  }
+}
+
+/* Registration form */
+
+div#registration {
+  padding: 0.5em 1em;
+  background: #eeeeee;
+  max-width: 40em;
+  border: 1px solid #9962a7;
+  margin: 1.5em auto;
+}
+
+div#registration form {
+  padding: 0.75em 0em;
+  text-align: left;
+}
+
+div#registration #formtitle {
+  margin-top: 0.25em;
+  margin-bottom: 0.5em;
+  text-align: center;
+}
+
+div#registration form div { /* IE6 won't do the immediate child selector, > */
+  clear: both;
+  margin-bottom: 0.5em;
+  vertical-align: middle;
+  overflow: hidden;
+}
+
+div#registration form div div.label,
+div#registration form div div.combolabel {
+  float: left;
+  clear: none;
+}
+
+div#registration form div div.label {
+  width:25%;
+}
+
+div#registration form div div.combolabel {
+  width:85%;
+}
+
+div#registration form div label {
+  vertical-align:middle;
+}
+
+div#registration form div div.field,
+div#registration form div div.combofield {
+  float: right;
+  clear: none;
+}
+
+div#registration form div div.field {
+  width: 75%;
+}
+
+div#registration form div div.combofield {
+  width: 15%;
+  text-align: right;
+}
+
+div#registration input[type=text],
+div#registration input[type=email] {
+    vertical-align: middle;
+             width: 100%;
+-webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+        box-sizing: border-box;
+}
+
+div#registration input[type=checkbox] {
+  margin-right: 0.5em;
+}
+
+div#registration hr {
+  color: #9962a7;
+  background-color: #333;
+  border: 0px;
+  height: 1px;
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+div#registration textarea {
+  width: 99%;
+  min-height: 8em;
+}
+
+@media all and (max-width: 650px) {
+  div#registration form div div.label {
+    clear: both;
+    float: none;
+    width: 100%;
+    margin-bottom: 0.1em;
+  }
+
+  div#registration form div div.field,
+  div#registration form div div.combofield {
+    float: none;
+    clear: both;
+    width: 100%;
+  }
+}
+
+div#registration form div.submit {
+  text-align: center;
+  width: 100%;
+}
+
+div#registration form input[type=submit] {
+  margin-top: 1.5em;
+  margin-bottom: 0.25em;
+  max-width: 15em;
+}
+
+
+div.formres {
+  margin-top: 3em;
+  margin-bottom: 1.5em;
+  text-align: center;
+  font-weight: bold;
+}
+
+div.formback {
+  text-align: center;
+  margin-bottom: 3em;
+}
+
+
+/* Content */
+
+.clearer {
+  clear: both;
+}
+
+div#content-container {
+  max-width: 60em;
+  margin: 0 auto;
+  padding: 0;
+  text-align: left;
+}
+
+div#content {
+  width: 91%;
+  padding: 1.5em 4.5%;
+  margin: 0;
+  background: #ffffff;
+  box-shadow: 0em 0.125em 0.5em #222;
+  -webkit-box-shadow: 0em 0.125em 0.5em #222;
+  -moz-box-shadow: 0em 0.125em 0.5em #222;
+}
+
+div#logos {
+  margin: 1.5em 0;
+  text-align: center;
+}
+
+div#logos img {
+  margin: 1em 1em;
+  border: 0;
+}
+
+div#footer {
+  clear:both;
+  font-size: 84%;
+  color: #888;
+  margin-top: 2em;
+}
+
+div#footer div#change {
+  float: right;
+  text-align: right;
+}
+
+div#footer div#contact {
+  float: left;
+  text-align: left;
+}
+
+/* General content layout */
+div#content h1 {
+  font-size: 125%;
+  border-bottom: 1px dashed #9962a7;
+  padding-bottom: 0.1em;
+  font-family: "Century Gothic", Helvetica, Arial, sans-serif;
+}
+
+div#content h2 {
+  font-size: 110%;
+  border-bottom: 1px dashed #9962a7;
+  padding-bottom: 0.05em;
+  font-family: "Century Gothic", Helvetica, Arial, sans-serif;
+}
+
+/* Links */
+a:link {
+  color: #ae37c8;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #8b2ca0;
+}
+
+a:hover {
+  color: red;
+}
+
+@media all and (max-width: 650px) {
+  ul {
+    padding-left: 1em;
+    padding-right: 0;
+  }
+}
+
+/* DB table view */
+table.db {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table.db tr {
+  border-bottom: 1px solid black;
+}
+
+table.db td {
+  padding: 0.4em 0.6em;
+  border: 0px;
+}
+
+table.db th {
+  padding: 0.25em 0.6em;
+  cursor: pointer;
+  border-radius: 0.75em 0.75em 0em 0em;
+  background: #9962a7;
+  color: #fff;
+  text-align: left;
+}
+
+table.db td:nth-child(even) {
+  background: #dddddd;
+}
+
+table.db th:after {
+  content: " \25B4";
+  float:right;
+  color:#ccc;
+  visibility: hidden;
+}
+
+table.db th.sorted-asc:after {
+  content: " \25B4";
+  visibility:visible;
+}
+
+table.db th.sorted-desc:after {
+  content: " \25BE";
+  visibility:visible;
+}
+
+table.db th:hover:after {
+  content: " \25B4";
+  visibility: visible;
+  color:white;
+}
+
+table.db th.sorted-asc:hover:after {
+  content: " \25BE";
+}
+
+div.dbsummary {
+  text-align: right;
+}
+
+/* Layout for Hotel descriptions */
+div.hotel {
+  background:#eeeeee;
+  border: 1px solid #9962a7;
+  padding: 0.5em 1em;
+  margin: 1em 0em;
+  overflow: auto;
+}
+
+div.hotel span.name {
+  font-weight: bold;
+  margin-right: 0.5em;
+}
+
+div.hotel span.stars {
+  margin-right: 0.5em;
+}
+
+@media all and (min-width: 600px) {
+  div.hotel span.stars {
+    float: right;
+  }
+}
+
+div.hotel ul {
+  position: relative;
+  left: 1.5em;
+  margin-right: 0.5em;
+}
+
+div.hotel img {
+  margin: 0em 1em 0.5em 0em;
+  width: 165px;
+  height: 110px;
+  float: left;
+  border: 0;
+}
+
+/* Legend on Location page */
+div.legend {
+  margin: 1em 0em;
+}
+
+div.legendicon {
+  float: left;
+  margin-right: 0.75em;
+}
+
+div.legendtext {
+  overflow: hidden;
+}
+
+
+/* Participant table */
+table.participants {
+    margin-top: 1em;
+    border-collapse: collapse;
+}
+
+table.participants td, table.participants th {
+    border: 1px solid black;
+    padding: 0.1em 0.2em;
+}
+
+table.participants th {
+    background: #9962a7;
+    text-align: center;
+}
+
+.alert {
+  color: red;
+}
+
+.proctitle {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  text-align: center;
+  display: block;
+  font-style:italic;
+}
+
