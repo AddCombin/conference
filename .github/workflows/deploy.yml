@@ -23,7 +23,7 @@ jobs:
       # 3️⃣ 创建输出目录
       - name: Create output directory
         run: mkdir -p output;
-             cp ../*.css .;
+             cp *.css output;
 
       # 4️⃣ 构建每个用户的 HTML
       - name: Build HTML for each user
